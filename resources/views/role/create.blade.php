@@ -19,7 +19,7 @@
                         </div>
                         <br>
                         <!-- Permissions -->
-                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                             @foreach ($permissions as $permission)
                                 <div class="flex items-center">
                                     <input type="checkbox" id="permission_{{ $permission->id }}" value="{{ $permission->name }}" name="permissions[]" class="mr-2">
