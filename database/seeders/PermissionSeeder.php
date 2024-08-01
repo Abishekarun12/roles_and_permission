@@ -43,15 +43,40 @@ class PermissionSeeder extends Seeder
 
 
 
-        $role = Role::create(['name' => 'Super Admin']);
-        $role->givePermissionTo(Permission::all());
+        $role1 = Role::create(['name' => 'Super Admin']);
+        $role1->givePermissionTo(Permission::all());
 
         // or may be done by chaining
-        $role = Role::create(['name' => 'Admin'])
+        $role2 = Role::create(['name' => 'Admin'])
             ->givePermissionTo(['article_show','article_create','article_edit','article_delete','user_show','user_create']);
 
-        $role = Role::create(['name' => 'User']);
-        $role->givePermissionTo('article_show','article_create','article_edit','article_delete');
+        $role3 = Role::create(['name' => 'User']);
+        $role3->givePermissionTo('article_show','article_create','article_edit','article_delete');
+
+
+        $user = \App\Models\User::factory()->create([
+            'name' => 'Abishek',
+            'email' => 'abiarun7708@gmail.com',
+        ]);
+        $user->assignRole($role1);
+
+        $user = \App\Models\User::factory()->create([
+            'name' => 'Super Admin',
+            'email' => 'superadmin@superadmin.com',
+        ]);
+        $user->assignRole($role1);
+
+        $user = \App\Models\User::factory()->create([
+            'name' => 'Admin',
+            'email' => 'admin@admin.com',
+        ]);
+        $user->assignRole($role2);
+
+        $user = \App\Models\User::factory()->create([
+            'name' => 'User',
+            'email' => 'user@user.com',
+        ]);
+        $user->assignRole($role3);
 
     }
 }

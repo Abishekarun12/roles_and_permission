@@ -57,7 +57,7 @@
                                         </td>
                                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                                             @foreach ($role->permissions->sortBy('name') as $permission)
-                                                <span class="inline-block bg-gray-200 text-gray-800 rounded-full px-3 py-1 text-sm font-semibold mr-2 mb-2">
+                                                <span style="color: grey" class="inline-block bg-gray-200 text-gray-800 rounded-full px-3 py-1 text-sm font-semibold mr-2 mb-2">
                                                     {{ $permission->name }}
                                                 </span>
                                             @endforeach
