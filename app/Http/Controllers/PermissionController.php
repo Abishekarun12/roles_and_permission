@@ -37,7 +37,7 @@ class PermissionController extends Controller implements HasMiddleware
      */
     public function create()
     {
-        // return view('permission.create');
+        return view('permission.create');
     }
 
     /**
